@@ -11,14 +11,6 @@ collection = client.get_or_create_collection("cat_facts")
 with open('cat-facts.txt', 'r') as file:
     cat_facts = [line.strip() for line in file if line.strip()]
 
-"""
-# Normalization
-def normalize(vector):
-    norm = np.linalg.norm(vector)
-    if norm == 0:
-        return vector
-    return vector / norm
-"""
 model = SentenceTransformer('all-MiniLM-L6-v2')
 # Initialize the database with cat facts if it's empty
 def insert(chunk, batch_size=100):
