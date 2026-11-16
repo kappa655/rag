@@ -15,19 +15,6 @@ This project loads cat facts from a text file, converts them into embeddings, st
 
 ![Pipeline overview](./visualization.svg)
 
-```mermaid
-flowchart LR
-    A[cat-facts.txt] --> B[Load facts]
-    B --> C[SentenceTransformer embeddings]
-    C --> D[(ChromaDB collection)]
-    E[User question] --> F[Encode query]
-    F --> G[Query vector store]
-    D --> G
-    G --> H[Top relevant facts]
-    H --> I[Prompt with facts]
-    I --> J[Ollama chat]
-    J --> K[Answer]
-```
 
 ## Files
 
